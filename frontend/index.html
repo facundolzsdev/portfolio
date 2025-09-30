@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      as="style">
+   <link rel="stylesheet" href="css/style.css" />
+   <link rel="stylesheet" href="css/contact-form.css">
+   <link rel="stylesheet" href="css/about-me.css">
+   <title>Facundo Lozano | Desarrollador</title>
+</head>
+
+<body>
+   <header>
+      <a class="logo" style="cursor: pointer;">
+         <img src="assets/my_icon.png" alt="Spy++ Logo">
+      </a>
+      <div class='bx bx-menu' id="menu-icon"></div>
+      <ul class="navbar">
+         <li><a href="#home">Inicio</a></li>
+         <li><a href="#portfolio">Proyectos</a></li>
+         <li><a href="#certifications">Certificaciones</a></li>
+         <li><a href="#technologies">Herramientas</a></li>
+         <li><a href="#contact">Contacto</a></li>
+      </ul>
+   </header>
+   <!-- HOME SECTION -->
+   <section class="home" id="home">
+      <div class="home-content">
+         <h3>Me presento:</h3>
+         <h1>Facundo Lozano</h1>
+         <h3>Realizo <span class="multiple-text"></span></h3>
+         <p>
+            Dominando Java y su ecosistema, construyo aplicaciones web y de escritorio, manejando desde el análisis de
+            requisitos hasta la implementación final. Mi enfoque se centra en escribir código limpio, aplicar buenas
+            prácticas de desarrollo y mantener una documentación clara y actualizada, asegurando la escalabilidad y
+            mantenibilidad de cada proyecto.
+            <br><br>
+            Para conocer más sobre mí, te invito a visitar mis perfiles en:
+         </p>
+         <div class="social-media">
+            <a href="https://www.workana.com/freelancer/576993ae1aa288456b78a26c9c82bed1" title="Workana"
+               target="_blank" rel="noopener noreferrer">
+               <i class='bx bxs-briefcase'></i>
+            </a>
+            <a href="https://github.com/facundolzsdev" title="GitHub" target="_blank" rel="noopener noreferrer">
+               <i class='bx bxl-github'></i>
+            </a>
+         </div>
+         <a href="https://drive.google.com/file/d/1O6av_mmdFSlSwafNTvKcs8CICQ9uYYoa/view?usp=sharing" class="btn"
+            target="_blank" rel="noopener noreferrer">Descargar CV</a>
+      </div>
+      <div class="home-animation">
+         <lottie-player src="assets/lottie/my-animation.json" background="transparent" speed="1" loop autoplay
+            style="width: 100%; height: auto;">
+         </lottie-player>
+      </div>
+   </section>
+   <!-- PORTFOLIO SECTION -->
+   <section class="portfolio" id="portfolio">
+      <h2 class="heading">Mis <span>Proyectos</span></h2>
+      <div class="portfolio-content">
+         <!-- Project 1 -->
+         <div class="row">
+            <img src="assets/geocarga_wallpaper.jpg" alt="">
+            <div class="project-header">
+               <h4>Cotizador de Envíos</h4>
+               <div class="row-icon">
+                  <a href="https://github.com/facundolzsdev/geo-carga" title="Ver Código" target="_blank"
+                     rel="noopener noreferrer">
+                     <i class="bx bxl-github"></i>
+                  </a>
+                  <a href="https://youtube.com/playlist?list=PLo6gJIiicJy_sBoJFaMlj9ZW8p6nWRiPT&si=LcrCXDJzinIhEeOk"
+                     title="Ver Playlist" target="_blank" rel="noopener noreferrer">
+                     <i class="bx bxl-youtube"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="project-description">
+               <h5>GEO-CARGA es una aplicación web que permite realizar cotizaciones de envíos dentro de Argentina.
+                  Muestra la distancia, el tiempo de entrega estimado, las instrucciones paso a paso de la ruta y un
+                  mapa interactivo, además de incluir validaciones y manejo de errores en tiempo real.<br><br>
+                  <b>Stack: Spring Boot, WebClient, Axios, React-Bootstrap</b>.
+               </h5>
+            </div>
+         </div>
+         <!-- Project 2 -->
+         <div class="row">
+            <img src="assets/ntraders_wallpaper.png" alt="">
+            <div class="project-header">
+               <h4>Northwind Traders</h4>
+               <div class="row-icon">
+                  <a href="https://github.com/facundolzsdev/northwind-traders-jakarta" title="Ver Código"
+                     target="_blank" rel="noopener noreferrer">
+                     <i class="bx bxl-github"></i>
+                  </a>
+                  <a href="https://youtube.com/playlist?list=PLo6gJIiicJy_CTeun0VCVttNv1B8mRzYC&si=SXpy5qWw2AXlCrLJ"
+                     title="Ver Playlist" target="_blank" rel="noopener noreferrer">
+                     <i class="bx bxl-youtube"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="project-description">
+               <h5>Sistema de ecommerce que utiliza una versión adaptada de la base de datos de la empresa ficticia
+                  Northwind Traders. Permite gestionar productos, clientes, empleados y pedidos, con control de acceso
+                  basado en roles (cliente, empleado y admin), así como la generación de reportes
+                  administrativos.<br><br>
+                  <b>Stack: Jakarta EE, JSF + PrimeFaces (UI), MySQL, JPA/Hibernate</b>.
+               </h5>
+            </div>
+         </div>
+         <!-- Project 3 -->
+         <div class="row">
+            <img src="assets/api_planner_wallpaper.png" alt="">
+            <div class="project-header">
+               <h4>Personal Event Planner API</h4>
+               <div class="row-icon">
+                  <a href="https://github.com/facundolzsdev/event-planner-api" title="Ver Código" target="_blank"
+                     rel="noopener noreferrer">
+                     <i class="bx bxl-github"></i>
+                  </a>
+                  <a href="https://youtube.com/playlist?list=PLo6gJIiicJy9CG8Pbb5FSazA3riQByYzV&si=dWU5ASL1_ROY3GfD"
+                     title="Ver Playlist" target="_blank" rel="noopener noreferrer">
+                     <i class="bx bxl-youtube"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="project-description">
+               <h5>API REST para gestionar eventos personales. Permite a cada usuario autenticado crear, editar,
+                  eliminar y consultar sus propios eventos (reuniones, recordatorios, etc.), mediante un sistema de
+                  autenticación y autorización JWT. Incluye integración con Swagger para una fácil exploración de los
+                  endpoints.<br><br><b>Stack: Spring Boot, Spring Security JWT, Spring Data JPA, MySQL</b>.</h5>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- CERTIFICATIONS SECTION -->
+   <section class="certifications" id="certifications">
+      <h2 class="heading">Certificaciones <span>Oficiales</span></h2>
+      <div class="certifications-content">
+         <!-- Certification Card 1 -->
+         <div class="cert-card">
+            <img src="assets/oracle_cert.png" alt="Oracle Certification" class="cert-image"
+               data-full="assets/oracle_cert.png" />
+            <div class="cert-info">
+               <h4 class="cert-title">Oracle Certified Foundations Associate</h4>
+               <span class="cert-date">Obtenido: Febrero 2025 • ID de Credencial: 101088084JAVA8OJA</span>
+               <p class="cert-description">
+                  Certificación oficial de Oracle en fundamentos del lenguaje Java, conceptos de Programación Orientada
+                  a Objetos y desarrollo de aplicaciones.
+               </p>
+               <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=C2B58F1FA95A415E253AEBF5114CF7BB21483C871F1F3AAAC51C4A142A1E8BE6"
+                  target="_blank" rel="noopener noreferrer" class="btn">
+                  Ver Credencial
+               </a>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- LIGHTBOX MODAL -->
+   <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+   </div>
+   <!-- TECHNOLOGIES SECTION -->
+   <section class="technologies" id="technologies">
+      <h2 class="heading">Herramientas <span>Principales</span></h2>
+      <div class="tech-grid">
+         <div class="tech-card">
+            <i class="devicon-java-plain"></i>
+            <p>Java SE, EE</p>
+         </div>
+         <div class="tech-card">
+            <i class="devicon-spring-original"></i>
+            <p>Ecosistema Spring</p>
+         </div>
+         <div class="tech-card">
+            <i class="devicon-mysql-original"></i>
+            <p>MySQL</p>
+         </div>
+         <div class="tech-card">
+            <i class="devicon-sqlite-plain"></i>
+            <p>SQLite</p>
+         </div>
+         <div class="tech-card">
+            <i class="devicon-microsoftsqlserver-plain"></i>
+            <p>SQL Server</p>
+         </div>
+         <div class="tech-card">
+            <i class="devicon-openapi-plain"></i>
+            <p>OpenAPI</p>
+         </div>
+         <div class="tech-card">
+            <i class="devicon-javascript-plain"></i>
+            <p>JavaScript</p>
+         </div>
+         <div class="tech-card">
+            <i class="devicon-reactbootstrap-original"></i>
+            <p>React-Bootstrap</p>
+         </div>
+         <div class="tech-card">
+            <i class="devicon-html5-plain"></i>
+            <p>HTML</p>
+         </div>
+         <div class="tech-card">
+            <i class="devicon-css3-plain"></i>
+            <p>CSS</p>
+         </div>
+      </div>
+   </section>
+   <!-- CONTACT SECTION -->
+   <section class="contact" id="contact">
+      <h2 class="heading">Para <span>Contactarme</span></h2>
+      <form id="contactForm">
+         <div class="input-box">
+            <input type="text" name="fullName" placeholder="Nombre Completo *" required>
+            <input type="email" name="email" placeholder="Correo Electrónico *" required>
+         </div>
+         <div class="input-box">
+            <input type="text" name="phone" placeholder="Número Telefónico">
+            <input type="text" name="subject" placeholder="Asunto *" required>
+         </div>
+         <textarea name="message" cols="30" rows="10" placeholder="Tu Mensaje... *" required></textarea>
+         <input type="submit" value="Enviar" class="btn">
+      </form>
+   </section>
+   <!-- FOOTER SECTION -->
+   <footer class="footer">
+      <div class="social">
+         <a href="https://www.workana.com/freelancer/576993ae1aa288456b78a26c9c82bed1" title="Workana" target="_blank"
+            rel="noopener noreferrer">
+            <i class='bx bxs-briefcase'></i>
+         </a>
+         <a href="https://github.com/facundolzsdev" title="GitHub" target="_blank" rel="noopener noreferrer">
+            <i class='bx bxl-github'></i>
+         </a>
+      </div>
+      <div class="brand-signature">
+         <div class="brand-text">
+            <span class="developed-by">Desarrollado por</span>
+            <span class="name">Facundo Lozano</span>
+            <span class="separator">⚡</span>
+            <span class="location-year">Argentina • 2025</span>
+         </div>
+      </div>
+   </footer>
+   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+   <script src="js/script.js"></script>
+   <script src="js/contact-form.js"></script>
+   <script src="js/about-me.js"></script>
+</body>
+
+</html>

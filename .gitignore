@@ -1,0 +1,14 @@
+backend/target/
+backend/.mvn/
+
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+
+.DS_Store
+Thumbs.db
+
+*.log

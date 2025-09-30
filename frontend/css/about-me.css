@@ -1,0 +1,252 @@
+.story-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    padding: 2rem;
+}
+
+.story-modal {
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 20px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    user-select: none;
+    box-shadow: 0 0 50px rgba(143, 204, 207, 0.5);
+}
+
+.story-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 3rem 1.5rem;
+    border-bottom: 1px solid var(--main-color);
+    background: linear-gradient(135deg, rgba(143, 204, 207, 0.1), transparent);
+}
+
+.story-modal-header h2 {
+    color: var(--main-color);
+    font-size: 2.6rem;
+    margin: 0;
+    background: -webkit-linear-gradient(#138F97, #B6F0DF);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.close-story-modal {
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+}
+
+.close-story-modal:hover {
+    color: var(--main-color);
+    transform: scale(1.1);
+}
+
+.story-modal-content {
+    padding: 2rem 3rem 3rem;
+}
+
+.story-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(143, 204, 207, 0.3);
+}
+
+.story-logo {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px rgba(143, 204, 207, 0.3));
+}
+
+.story-subtitle {
+    color: var(--text-color);
+    font-size: 1.7rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.story-timeline {
+    position: relative;
+    margin: 3rem 0;
+}
+
+.story-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--main-color), transparent);
+}
+
+.story-era {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding: 2rem 2rem 2rem 4rem;
+    background: var(--second-bg-color);
+    border-radius: 15px;
+    border-left: 4px solid var(--main-color);
+    transition: transform 0.3s ease;
+}
+
+.story-era:hover {
+    transform: translateX(5px);
+}
+
+.era-icon {
+    position: absolute;
+    left: -25px;
+    top: 2rem;
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.story-era h3 {
+    color: var(--main-color);
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.story-era p {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.story-era strong {
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+.vintage-tools,
+.modern-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.vintage-tool {
+    background: linear-gradient(135deg, #8B4513, #CD853F);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modern-tool {
+    background: linear-gradient(135deg, var(--main-color), #138F97);
+    color: var(--bg-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.story-philosophy {
+    margin: 3rem 0;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(143, 204, 207, 0.15), transparent);
+    border-radius: 15px;
+    border-left: 4px solid var(--main-color);
+}
+
+.story-philosophy blockquote {
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.story-current {
+    text-align: center;
+    padding: 2.5rem;
+    background: var(--second-bg-color);
+    border-radius: 15px;
+    border: 2px dashed var(--main-color);
+}
+
+.story-current h3 {
+    color: var(--main-color);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.story-current p {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .story-modal-overlay {
+        padding: 1rem;
+    }
+
+    .story-modal {
+        width: 95%;
+        margin: 1rem;
+    }
+
+    .story-modal-header {
+        padding: 2rem 2rem 1rem;
+    }
+
+    .story-modal-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .story-modal-content {
+        padding: 1.5rem 2rem 2rem;
+    }
+
+    .story-era {
+        padding: 1.5rem 1.5rem 1.5rem 3rem;
+        margin-left: 1rem;
+    }
+
+    .era-icon {
+        left: -20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .story-timeline::before {
+        left: 20px;
+    }
+}
