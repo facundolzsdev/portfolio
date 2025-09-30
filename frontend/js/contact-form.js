@@ -7,7 +7,7 @@ class ContactForm {
         this.originalBtnText = '';
 
         this.config = {
-            productionUrl: 'https://tu-app-render.onrender.com/api/contact',
+            productionUrl: 'https://portfolio-backend-ao2t.onrender.com/api/contact',
             localUrl: 'http://localhost:8080/api/contact',
             timeout: 10000,
             ...config
