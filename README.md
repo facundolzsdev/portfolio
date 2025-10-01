@@ -1,16 +1,17 @@
 ## ⚙️ Tecnologías Utilizadas
 
 ### 📑 Frontend
-*  **HTML5** Estructura base
+* **HTML5** Estructura base
 * **CSS3** Estilos y diseño responsivo
 * **Javascript** Menú dinámico, animaciones de texto, lightbox y validación/envío del formulario de contacto
 
 ### 📑 Backend
-*  **Java 17** Lenguaje principal
-*  **Spring Boot 3.x** Framework para construir y exponer la API del contacto
-* **Spring Mail** Envío de correos electrónicos desde el formulario
+* **Java 17** Lenguaje principal
+* **Spring Boot 3.x** Framework para construir y exponer la API del contacto
+* **Resend.com** Servicio de envío de correos electrónicos
+* **Spring Web Client** Comunicación con API de Resend
 * **Spring Context (MessageSource)** Gestión de mensajes internacionalizados
-*  **SLF4J + Logback** Manejo centralizado de logs
+* **SLF4J + Logback** Manejo centralizado de logs
 
 ---
 
@@ -18,13 +19,13 @@
 
 ### 📑 Backend
 
-| Paquete        | Contenido | Descripción                                                                                                                                         |
+| Paquete        | Contenido | Descripción |
 | -------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **config**     | `WebConfig`                 | Configuración central. Define reglas de **CORS** para permitir la comunicación segura entre el frontend y el backend.                 |
-| **controller** | `ContactController`         | Controlador REST que gestiona el **formulario de contacto**. Procesa los datos recibidos, construye el correo y maneja respuestas de éxito o error. |
-| **dto**        | `ContactFormDTO`            | Objeto de transferencia de datos que representa los campos del formulario de contacto (nombre, email, teléfono, asunto, mensaje).                   |
-| **util**       | `ContactFormSanitizer`      | Utilidad encargada de **sanitizar y limpiar** la entrada del usuario antes de procesarla, evitando caracteres indeseados o peligrosos.              |
-
+| **controller** | `ContactController`         | Controlador REST que gestiona el **formulario de contacto**. Procesa los datos recibidos y delega el envío al servicio de email. |
+| **dto**        | `ContactFormDTO`            | Objeto de transferencia de datos que representa los campos del formulario de contacto (nombre, email, teléfono, asunto, mensaje). |
+| **service**    | `ResendEmailService`        | Servicio encargado del envío de correos electrónicos mediante la API de *Resend.com*. |
+| **util**       | `ContactFormSanitizer`      | Utilidad encargada de **sanitizar y limpiar** la entrada del usuario antes de procesarla. |
 
 ### 📑 Frontend
 
@@ -49,12 +50,12 @@ Se implementa una clase `ContactForm` que gestiona el formulario:
     * Si alguna validación falla, se muestra un error debajo del campo correspondiente.
 
 - Envío al backend con fetch:
-    * Con timeout configurable (por defecto 10 segundos).
+    * Con timeout configurable.
     * Usa un *switch automático* para elegir entre **API local** o **API en producción**.
 
 - Modales personalizados:
     * ✅ **SuccessModal**: confirma que el mensaje se envió correctamente.
-    * ❌ **ErrorModal**: muestra el motivo del error (HTTP code, servidor caído, timeout, etc.).
+    * ❌ **ErrorModal**: muestra el motivo del error (HTTP code, servidor caído, timeout, etc..).
     * Ambos tienen estilos diferenciados, animaciones, cierre automático y son fáciles de extender.    
 
 - Extensibilidad:
@@ -62,17 +63,19 @@ Se implementa una clase `ContactForm` que gestiona el formulario:
     * Fácil de agregar más validaciones, campos o estilos.    
 
 
-### ▶️ Backend (*ContactController.java*)
+### ▶️ Backend (*ContactController.java* y *ResendEmailService.java*)
 Expone el endpoint `/api/contact` que recibe el formulario.
 
 Flujo de trabajo:
 - **Sanitización de datos** (via `ContactFormSanitizer`):
-    * Limpia entradas (espacios, caracteres inválidos, saltos de línea, etc.).
-    * **Importante**: Sanitizar no es validar. La validación se hace en el frontend. En este punto solo se normalizan los datos.
-- **Envío de correo** usando *JavaMailSender*. 
+    * Limpia entradas (espacios, caracteres inválidos, saltos de línea, etc..).
+- **Envío de correo** usando *ResendEmailService*:
+    * Se comunica con la API de Resend.com mediante REST.
+    * Construye el email. 
+    * Permite reply-to para responder directamente al remitente.
 - **Manejo de errores:**
-    * Errores diferenciados (`authError`, `sendError`, `serviceError`, `unexpectedError`).
-    * Mensajes obtenidos dinámicamente de `messages.properties` (fácil traducción en un futuro).
+    * Captura excepciones genéricas del servicio de email.
+    * Mensajes obtenidos dinámicamente de `messages.properties`.
 
 
 ### 💡 Decisiones de diseño
@@ -83,3 +86,21 @@ No se duplicaron validaciones en el backend, ya que el único origen de datos es
     * El backend recibe datos saneados y los procesa.
 - **Reutilización**:
 La lógica de los modales y el form puede migrarse sin cambios mayores a otro proyecto.    
+
+---
+
+## 🚀 Deployment
+
+### Frontend (Netlify)
+- **URL:** https://facundodev.netlify.app
+- **Configuración:** Deploy automático desde GitHub
+- **Características:** SSL gratuito, CDN global
+
+### Backend (Render)
+- **URL:** https://portfolio-backend-ao2t.onrender.com
+- **Plan:** Free tier
+- **Timeout configurado:** 60 segundos 
+
+### Servicio de Email (Resend.com)
+- **Plan:** Free tier (100 emails/mes)
+- **Características:** Alta tasa de entrega, API simple
