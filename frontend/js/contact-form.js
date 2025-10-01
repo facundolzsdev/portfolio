@@ -9,7 +9,7 @@ class ContactForm {
         this.config = {
             productionUrl: 'https://portfolio-backend-ao2t.onrender.com/api/contact',
             localUrl: 'http://localhost:8080/api/contact',
-            timeout: 10000,
+            timeout: 60000,
             ...config
         };
 
