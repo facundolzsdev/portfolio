@@ -123,30 +123,11 @@ class ContactForm {
         }
     }
 
-    /**
-     * Gets a specific error message based on the HTTP code.
-     */
     getHttpErrorMessage(status) {
-        switch (status) {
-            case 400:
-                return 'Los datos enviados no son válidos. Revisa el formulario.';
-            case 401:
-                return 'No tienes autorización para realizar esta acción.';
-            case 403:
-                return 'Acceso denegado al servidor.';
-            case 404:
-                return 'El servicio de contacto no está disponible.';
-            case 429:
-                return 'Demasiados intentos. Espera unos minutos antes de reintentar.';
-            case 500:
-                return 'Error interno del servidor. Intenta nuevamente.';
-            case 502:
-            case 503:
-            case 504:
-                return 'El servidor no está disponible temporalmente. Intenta más tarde.';
-            default:
-                return `Error del servidor (${status}). Intenta nuevamente.`;
+        if (status === 400) {
+            return 'Los datos enviados no son válidos. Revisa el formulario.';
         }
+        return 'Error del servidor. Intenta nuevamente.';
     }
 
     getFormData() {
