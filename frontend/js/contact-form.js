@@ -92,7 +92,7 @@ class ContactForm {
 
             let errorMessage;
             if (error.name === 'AbortError') {
-                errorMessage = 'El servidor tardó demasiado en responder. Intenta nuevamente.';
+                errorMessage = 'El servicio está iniciando. Por favor, intente enviar el mensaje nuevamente.';
             } else if (error instanceof TypeError || error.message.includes('fetch')) {
                 errorMessage = 'No se pudo conectar con el servidor. Verifica tu conexión a internet.';
             } else {
