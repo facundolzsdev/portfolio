@@ -537,34 +537,6 @@ span {
     background: var(--bg-color);
 }
 
-.footer .social {
-    text-align: center;
-    padding-bottom: 15px;
-    color: var(--main-color);
-}
-
-.footer .social a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background: transparent;
-    border: 0.2rem solid var(--main-color);
-    border-radius: 50%;
-    font-size: 2rem;
-    color: var(--main-color);
-    margin: 2rem 1.5rem 3rem 0;
-    transition: 0.3s ease;
-}
-
-.footer .social a:hover {
-    transform: scale(1.2) translateY(-8px);
-    background: var(--main-color);
-    color: var(--bg-color);
-    box-shadow: 0 0 20px var(--main-color);
-}
-
 .brand-signature {
     display: flex;
     flex-direction: column;
@@ -604,6 +576,33 @@ span {
     font-size: 1.6rem;
     color: var(--main-color);
     animation: pulse 2s infinite;
+}
+
+/* WHATSAPP QR */
+.whatsapp-qr {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 15px;
+    max-width: 180px;
+    border: 2px dashed var(--main-color);
+    background: rgba(143, 204, 207, 0.1);
+}
+
+.qr-image {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.whatsapp-qr p {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 600;
 }
 
 @keyframes pulse {
@@ -666,6 +665,7 @@ span {
     .separator {
         font-size: 1.5rem;
     }
+
 }
 
 @media (max-width: 786px) {
@@ -742,6 +742,20 @@ span {
 
     .brand-text .year {
         font-size: 15px;
+    }
+
+    .whatsapp-qr {
+        max-width: 160px;
+        padding: 1.2rem;
+    }
+
+    .qr-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .whatsapp-qr p {
+        font-size: 1.3rem;
     }
 }
 
@@ -850,6 +864,16 @@ span {
 
     .separator {
         font-size: 1.3rem;
+    }
+
+    .whatsapp-qr {
+        max-width: 150px;
+        margin: 1.5rem auto;
+    }
+
+    .qr-image {
+        width: 110px;
+        height: 110px;
     }
 }
 
