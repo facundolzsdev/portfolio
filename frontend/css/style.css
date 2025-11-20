@@ -555,19 +555,19 @@ span {
 }
 
 .developed-by {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: var(--text-color);
     opacity: 0.9;
 }
 
 .name {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: var(--main-color);
 }
 
 .location-year {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--text-color);
     opacity: 0.9;
 }

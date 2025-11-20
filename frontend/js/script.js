@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const typed = new Typed('.multiple-text', {
-        strings: ['Desarrollo de Software', 'Web y Desktop'],
+        strings: ['Desarrollo Backend', 'Aplicaciones Web'],
         typeSpeed: 90,
         backSpeed: 90,
         backDelay: 1300,

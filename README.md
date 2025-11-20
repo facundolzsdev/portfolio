@@ -29,7 +29,7 @@
 
 ### 📑 Frontend
 
-| Paquete / Carpeta     | Contenido                | Descripción                                                                                                                                                                                           |
+| Paquete/Carpeta     | Contenido                | Descripción                                                                                                                                                                                           |
 | --------------------- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **assets**            | imágenes <br> `lottie/`                     | Contiene los recursos gráficos utilizados en el portfolio (certificados, íconos, etc). La subcarpeta `lottie/` contiene una animación en formato .json utilizada en el sitio.                                                                                                       |
 | **css**               | `styles.css` <br> `contact-form.css` <br> `about-me.css` | `styles.css`: estilos generales y diseño responsive del portfolio. <br> `contact-form.css`: estilos específicos y responsive del formulario de contacto. <br> `about-me.css`: estilos del modal de la sección "Sobre mí".                           |
