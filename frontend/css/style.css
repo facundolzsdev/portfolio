@@ -585,7 +585,7 @@ span {
     padding: 1.5rem;
     border-radius: 15px;
     max-width: 180px;
-    border: 2px dashed var(--main-color);
+    border: 1px ridge var(--main-color);
     background: rgba(143, 204, 207, 0.1);
 }
 

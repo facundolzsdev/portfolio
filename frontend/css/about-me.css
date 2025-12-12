@@ -144,58 +144,12 @@
     font-weight: 700;
 }
 
-.vintage-tools,
-.modern-tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.vintage-tool {
-    background: linear-gradient(135deg, #8B4513, #CD853F);
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 25px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.modern-tool {
-    background: linear-gradient(135deg, var(--main-color), #138F97);
-    color: var(--bg-color);
-    padding: 0.6rem 1.2rem;
-    border-radius: 25px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.story-philosophy {
-    margin: 3rem 0;
-    padding: 2.5rem;
-    background: linear-gradient(135deg, rgba(143, 204, 207, 0.15), transparent);
-    border-radius: 15px;
-    border-left: 4px solid var(--main-color);
-}
-
-.story-philosophy blockquote {
-    color: var(--text-color);
-    font-size: 1.7rem;
-    font-style: italic;
-    line-height: 1.6;
-    margin: 0;
-    text-align: center;
-    font-weight: 500;
-}
-
 .story-current {
     text-align: center;
     padding: 2.5rem;
     background: var(--second-bg-color);
     border-radius: 15px;
-    border: 2px dashed var(--main-color);
+    border: 1px ridge var(--main-color);
 }
 
 .story-current h3 {
