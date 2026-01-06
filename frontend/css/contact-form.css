@@ -1,10 +1,4 @@
 :root {
-    --bg-color: #1F252D;
-    --second-bg-color: #29303A;
-    --text-color: #EDEDED;
-    --main-color: #8FCCCF;
-    --main-lighter-color: #8FCCCF;
-
     --error-color: #e74c3c;
     --error-light: #ff9e9e;
     --error-border: #e74c3c;
