@@ -1,3 +1,10 @@
+:root {
+    --bg-color: #1F252D;
+    --second-bg-color: #29303A;
+    --text-color: #FBF9F4;
+    --main-color: #63c5c0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,12 +17,13 @@
     font-family: 'Inter', sans-serif;
 }
 
-:root {
-    --bg-color: #1F252D;
-    --second-bg-color: #29303A;
-    --text-color: #EDEDED;
-    --main-color: #8FCCCF;
-    --main-lighter-color: #8FCCCF;
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--text-color);
+    width: 40px;
 }
 
 /* GENERAL SECTION TITLES */
@@ -97,13 +105,13 @@ header {
 
 .navbar a:hover,
 .navbar a.active {
-    color: var(--main-lighter-color);
-    border-bottom: 3px solid var(--main-lighter-color);
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
 }
 
 #menu-icon {
     font-size: 3.6rem;
-    color: var(--main-lighter-color);
+    color: var(--text-color);
     cursor: pointer;
     display: none;
 }
@@ -191,26 +199,35 @@ span {
 }
 
 .social-media a:hover {
-    transform: scale(1.2) translateY(-8px);
+    transform: scale(1.1) translateY(-3px);
     background-color: var(--main-color);
-    color: var(--bg-color);
+    color: var(--second-bg-color);
     box-shadow: 0 0 20px var(--main-color);
 }
 
 .btn {
+    display: inline-block;
     padding: 1rem 2.8rem;
-    background: var(--main-color);
+    background: var(--second-bg-color);
+    border: none;
     border-radius: 4rem;
-    box-shadow: none;
     font-size: 1.6rem;
-    color: var(--bg-color);
-    letter-spacing: 0.1rem;
+    color: var(--text-color);
     font-weight: 600;
-    transition: 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(17, 17, 17, 0.3);
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    box-shadow: 0 0 1.6rem var(--main-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: #323a46;
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* PORTFOLIO SECTION */
@@ -230,7 +247,6 @@ span {
     background: var(--bg-color);
     border-radius: 28px;
     border: 1px solid transparent;
-    box-shadow: 0 0 5px var(--main-color);
     padding: 20px;
     transition: all 0.3s ease;
     display: flex;
@@ -273,12 +289,11 @@ span {
 }
 
 .row i.bxl-youtube {
-    background: #ff0000;
+    background: #CD201F;
     color: white;
 }
 
 .row:hover {
-    border: 1px solid var(--main-color);
     transform: translateY(-5px) scale(1.03);
     cursor: pointer;
 }
@@ -329,7 +344,6 @@ span {
 .cert-card {
     background: var(--second-bg-color);
     border-radius: 20px;
-    border: 1px solid var(--main-color);
     padding: 2.5rem;
     transition: all 0.3s ease;
     display: flex;
@@ -339,8 +353,8 @@ span {
 }
 
 .cert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(143, 204, 207, 0.2);
+    transform: translateY(-5px) scale(1.03);
+    cursor: pointer;
 }
 
 .cert-card img {
@@ -389,10 +403,14 @@ span {
 
 .cert-card .btn {
     margin-top: auto;
-    padding: 1rem 2.8rem;
-    font-size: 1.5rem;
-    background: var(--main-color);
-    color: var(--bg-color);
+    background: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cert-card .btn:hover {
+    background: #161a20;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* LIGHTBOX STYLES */
@@ -414,7 +432,6 @@ span {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
-    box-shadow: 0 0 20px var(--main-color);
     object-fit: contain;
     margin: 0;
     padding: 0;
@@ -434,6 +451,7 @@ span {
 
 .close:hover {
     color: var(--main-color);
+    transform: scale(1.1);
 }
 
 /* TECHNOLOGIES SECTION */
@@ -452,7 +470,6 @@ span {
 
 .tech-card {
     background: var(--bg-color);
-    border: 1px solid var(--main-color);
     border-radius: 20px;
     padding: 2rem;
     width: 100%;
@@ -468,7 +485,6 @@ span {
 
 .tech-card i {
     font-size: 5.2rem;
-    color: var(--main-color);
     margin-bottom: 1.2rem;
     display: block;
     text-align: center;
@@ -513,7 +529,6 @@ span {
     color: var(--text-color);
     background: var(--second-bg-color);
     border-radius: 0.8rem;
-    border: 1px solid var(--main-color);
     margin: 0.7rem 0;
     resize: none;
 }
@@ -528,12 +543,51 @@ span {
     margin-top: 2rem;
 }
 
+/* WHATSAPP QR */
+.whatsapp-qr {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 15px;
+    max-width: 180px;
+    background: var(--second-bg-color);
+}
+
+.qr-link {
+    text-decoration: none;
+    display: inline-block; 
+}
+
+.qr-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: all 0.3s ease; 
+    cursor: pointer;
+}
+
+.qr-link:hover .qr-image {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.whatsapp-qr p {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 600;
+}
+
 /* FOOTER SECTION */
 .footer {
     position: relative;
     bottom: 0px;
     width: 100%;
     padding: 30px 0;
+    gap: 3rem;
     background: var(--bg-color);
 }
 
@@ -547,6 +601,7 @@ span {
 }
 
 .brand-text {
+    user-select: none;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -555,13 +610,13 @@ span {
 }
 
 .developed-by {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--text-color);
     opacity: 0.9;
 }
 
 .name {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--main-color);
 }
@@ -578,33 +633,6 @@ span {
     animation: pulse 2s infinite;
 }
 
-/* WHATSAPP QR */
-.whatsapp-qr {
-    text-align: center;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    border-radius: 15px;
-    max-width: 180px;
-    border: 1px ridge var(--main-color);
-    background: rgba(143, 204, 207, 0.1);
-}
-
-.qr-image {
-    width: 110px;
-    height: 110px;
-    margin-bottom: 1rem;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-.whatsapp-qr p {
-    color: var(--text-color);
-    font-size: 1.4rem;
-    line-height: 1.4;
-    margin: 0;
-    font-weight: 600;
-}
-
 @keyframes pulse {
 
     0%,
@@ -615,16 +643,6 @@ span {
     50% {
         opacity: 0.5;
     }
-}
-
-/* SCROLLBAR */
-::-webkit-scrollbar {
-    width: 15px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #A6A6A6;
-    width: 50px;
 }
 
 /* RESPONSIVE DESIGN */

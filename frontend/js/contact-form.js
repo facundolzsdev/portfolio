@@ -7,9 +7,9 @@ class ContactForm {
         this.originalBtnText = '';
 
         this.config = {
-            productionUrl: 'https://portfolio-backend-ao2t.onrender.com/api/contact',
+            productionUrl: 'https://tu-app-render.onrender.com/api/contact',
             localUrl: 'http://localhost:8080/api/contact',
-            timeout: 15000,
+            timeout: 10000,
             ...config
         };
 
@@ -92,7 +92,7 @@ class ContactForm {
 
             let errorMessage;
             if (error.name === 'AbortError') {
-                errorMessage = 'El servicio se está iniciando. Por favor, intente nuevamente en unos segundos.';
+                errorMessage = 'El servidor tardó demasiado en responder. Intenta nuevamente.';
             } else if (error instanceof TypeError || error.message.includes('fetch')) {
                 errorMessage = 'No se pudo conectar con el servidor. Verifica tu conexión a internet.';
             } else {
@@ -123,11 +123,30 @@ class ContactForm {
         }
     }
 
+    /**
+     * Gets a specific error message based on the HTTP code.
+     */
     getHttpErrorMessage(status) {
-        if (status === 400) {
-            return 'Los datos enviados no son válidos. Revisa el formulario.';
+        switch (status) {
+            case 400:
+                return 'Los datos enviados no son válidos. Revisa el formulario.';
+            case 401:
+                return 'No tienes autorización para realizar esta acción.';
+            case 403:
+                return 'Acceso denegado al servidor.';
+            case 404:
+                return 'El servicio de contacto no está disponible.';
+            case 429:
+                return 'Demasiados intentos. Espera unos minutos antes de reintentar.';
+            case 500:
+                return 'Error interno del servidor. Intenta nuevamente.';
+            case 502:
+            case 503:
+            case 504:
+                return 'El servidor no está disponible temporalmente. Intenta más tarde.';
+            default:
+                return `Error del servidor (${status}). Intenta nuevamente.`;
         }
-        return 'Error del servidor. Intenta nuevamente.';
     }
 
     getFormData() {
@@ -205,7 +224,7 @@ class ContactForm {
 
         return isLocal
             ? 'http://localhost:8080/api/contact'
-            : 'https://portfolio-backend-ao2t.onrender.com/api/contact';
+            : 'https://PENDIENTE-ACTUALIZAR.onrender.com/api/contact'; // TODO: Replace with actual Render URL
     }
 }
 

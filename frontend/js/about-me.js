@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     const logo = document.querySelector('.logo');
-
     if (logo) {
         logo.addEventListener('click', function () {
             showPersonalStoryModal();
@@ -9,78 +8,66 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function showPersonalStoryModal() {
+    document.documentElement.classList.add('no-scroll');
+    document.body.classList.add('no-scroll');
+
     const modal = document.createElement('div');
     modal.className = 'story-modal-overlay';
     modal.innerHTML = `
         <div class="story-modal">
             <div class="story-modal-header">
-                <h2>El camino recorrido</h2>
+                <h2>Sobre Mí</h2>
                 <span class="close-story-modal">&times;</span>
             </div>
             <div class="story-modal-content">
                 <div class="story-intro">
                     <img src="assets/my_icon.png" alt="Spy++" class="story-logo">
-                    <p class="story-subtitle">De reparar computadoras a desarrollar software</p>
+                    <p class="story-subtitle">Hardware, fundamentos y especialización</p>
                 </div>
                 
                 <div class="story-timeline">
-                    <!-- First -->
                     <div class="story-era">
-                        <div class="era-icon">🛠️</div>
-                        <h3>Los Primeros Años - El Hardware</h3>
-                        <p>Haber crecido con una computadora en casa me permitió adquirir conocimientos en reparación, 
-                        cambio de piezas y componentes, formateo, e instalación de sistemas operativos (Windows) y programas.</p>
+                        <div class="era-icon"><i class='bx bx-wrench'></i></div>
+                        <h3>Hardware & Arquitectura</h3>
+                       <p>Mi base técnica nació del hardware. La reparación y el mantenimiento de equipos me permitió entender el funcionamiento interno de las máquinas antes de escribir mi primera línea de código.</p>
                     </div>
                     
-                    <!-- Second -->
                     <div class="story-era">
-                        <div class="era-icon">💡</div>
-                        <h3>2021 - El Punto de Inflexión</h3>
-                        <p>Mi intención cambió: quería <strong>crear software</strong>, no solo utilizarlo. 
-                        Comencé una exhaustiva investigación sobre qué necesitaba aprender para poder lograrlo.</p>
+                        <div class="era-icon"><i class='bx bx-bulb'></i></div>
+                        <h3>2022 — El Cambio</h3>
+                        <p>Decidí dejar de reparar sistemas para empezar a construirlos. Inicié una investigación profunda para trazar mi camino como desarrollador de software.</p>
                     </div>
                     
-                    <!-- Third -->
                     <div class="story-era">
-                        <div class="era-icon">📚</div>
-                        <h3>Los Fundamentos - QuickBasic y Pascal</h3>
-                        <p>Mis primeras líneas de código fueron escritas en los ya obsoletos lenguajes <strong>QuickBasic y Pascal</strong> (ambos de paradigma estructural), 
-                        estudiando y practicando con ejemplos del excelentísimo libro <em>'Algoritmos Y Estructuras de Datos'</em> del maestro Niklaus Wirth.</p>
+                        <div class="era-icon"><i class='bx bx-code-block'></i></div>
+                        <h3>Raíces: QuickBasic y Pascal</h3>
+                        <p>Escribí mis primeras líneas de código en los lenguajes <strong>QuickBasic</strong> y <strong>Pascal</strong>, estudiando y practicando con ejemplos del libro <em>'Algoritmos y Estructuras de Datos'</em> del maestro <strong>Niklaus Wirth</strong>.</p>
                     </div>
                     
-                    <!-- Fourth -->
                     <div class="story-era">
-                        <div class="era-icon">🚀</div>
-                        <h3>El Gran Salto - Paradigma Orientado a Objetos</h3>
-                        <p>
-                        Mientras que la programación estructural se centra en secuencias lógicas de instrucciones y funciones, 
-                        la orientada a objetos exige pensar en términos de entidades, relaciones y comportamientos. 
-                        Este cambio de paradigma, de la lógica lineal a la lógica de modelado de la realidad, es lo que hace que dar este salto sea un desafío.
-                        </p>
+                        <div class="era-icon"><i class='bx bx-objects-vertical-bottom'></i></div>
+                        <h3>Cambio de paradigma</h3>
+                        <p>Aprendí a diseñar software pensando en componentes reutilizables y relaciones entre elementos, en lugar de instrucciones secuenciales. Este cambio de mentalidad fue clave para construir sistemas más complejos.</p>
                     </div>
                     
-                    <!-- Fifth -->
                     <div class="story-era">
-                        <div class="era-icon">☕</div>
-                        <h3>El Encuentro con Java</h3>
-                        <p>El libro <em>'Cómo programar en Java'</em> de Deitel & Deitel (Padre e Hijo), con su estilo didáctico, facilitó la comprensión de conceptos complejos. 
-                        Desde entonces, no me alejé de este lenguaje de programación.</p>
+                        <div class="era-icon"><i class='bx bxl-java'></i></div>
+                        <h3>Especialización en Java</h3>
+                        <p>Adopté <strong>Java</strong> como mi lenguaje principal debido a su robustez y versatilidad. Su ecosistema y la capacidad para construir sistemas escalables definieron mi perfil, convirtiéndose en el pilar de mi arquitectura de desarrollo <strong>Backend</strong>.</p>
                     </div>
                     
-                    <!-- Sixth -->
                     <div class="story-era">
-                        <div class="era-icon">🎓</div>
-                        <h3>2025 - Certificación Oracle</h3>
-                        <p>Validé formalmente mis conocimientos obteniendo la certificación 
-                        <strong>Oracle Certified Foundations Associate</strong>, 
-                        demostrando dominio en fundamentos de Java y POO.</p>
+                        <div class="era-icon"><i class='bx bx-certification'></i></div>
+                        <h3>2025 — Certificación Oracle</h3>
+                        <p>Consolidé mi formación técnica obteniendo la credencial <strong>Oracle Certified Foundations Associate</strong> emitida por <strong>Oracle University</strong>. Esta certificación valida mi conocimiento en los estándares de <strong>Java SE</strong> y el diseño avanzado de <strong>Programación Orientada a Objetos</strong>.</p>
                     </div>
                 </div>
                 
                 <div class="story-current">
-                    <h3>👨‍💻 Mi Presente</h3>
-                    <p>Hoy me especializo en el ecosistema Java, creando software escalable y mantenible, 
-                    aplicando esos fundamentos sólidos en proyectos que resuelven problemas reales.</p>
+                    <div class="current-icon"><i class='bx bx-terminal'></i></div>
+                    <h3>Mi Presente</h3>
+                    <p>Me enfoco en convertir necesidades de negocio en <strong>soluciones tecnológicas robustas</strong>. 
+                    Combino la disciplina de mis raíces con estándares modernos para desarrollar sistemas que no solo funcionen, sino que estén <strong>preparados para crecer</strong>.</p>
                 </div>
             </div>
         </div>
@@ -88,12 +75,21 @@ function showPersonalStoryModal() {
 
     document.body.appendChild(modal);
 
-    modal.querySelector('.close-story-modal').onclick = () => modal.remove();
-    modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
-    document.addEventListener('keydown', function closeOnEsc(e) {
+    const closeModal = () => {
+        modal.remove();
+        document.documentElement.classList.remove('no-scroll');
+        document.body.classList.remove('no-scroll');
+    };
+
+    modal.querySelector('.close-story-modal').onclick = closeModal;
+    modal.onclick = (e) => { if (e.target === modal) closeModal(); };
+
+    const onKeyDown = (e) => {
         if (e.key === 'Escape') {
-            modal.remove();
-            document.removeEventListener('keydown', closeOnEsc);
+            closeModal();
+            document.removeEventListener('keydown', onKeyDown);
         }
-    });
+    };
+
+    document.addEventListener('keydown', onKeyDown);
 }

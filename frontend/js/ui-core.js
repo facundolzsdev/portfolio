@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const typed = new Typed('.multiple-text', {
-        strings: ['Desarrollo Backend', 'Aplicaciones Web'],
+        strings: ['Aplicaciones Web', 'Desarrollo Backend'],
         typeSpeed: 90,
         backSpeed: 90,
         backDelay: 1300,
@@ -41,5 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target === lightbox) {
             lightbox.style.display = "none";
         }
+    });
+
+    // WHATSAPP CONTACT:
+    document.getElementById('wpp-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        const country = "54";
+        const area = "3445";
+        const phoneNumber = "431141";
+
+        const fullUrl = "https://wa.me/" + country + area + phoneNumber;
+        window.open(fullUrl, '_blank');
     });
 });
