@@ -21,7 +21,7 @@ function showPersonalStoryModal() {
             </div>
             <div class="story-modal-content">
                 <div class="story-intro">
-                    <img src="assets/my_icon.png" alt="Spy++" class="story-logo">
+                    <img src="assets/my_icon.png" alt="Facundodev custom logo" class="story-logo">
                     <p class="story-subtitle">Hardware, fundamentos y especialización</p>
                 </div>
                 
